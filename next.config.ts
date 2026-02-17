@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next'
+import { withOpenNext } from '@opennextjs/cloudflare'
 
 const nextConfig: NextConfig = {
   // Strict mode for better React practices
@@ -52,6 +53,12 @@ const nextConfig: NextConfig = {
       },
     ]
   },
+
+  // Ensure Next.js runs in Edge runtime for Cloudflare
+  experimental: {
+    runtime: 'edge',
+  },
 }
 
-export default nextConfig
+// Wrap with OpenNext for Cloudflare compatibility
+export default withOpenNext(nextConfig)

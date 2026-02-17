@@ -1,8 +1,11 @@
 name = "solarbright-energy"
-compatibility_date = "2024-12-01"
+compatibility_date = "2025-01-01"
 
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = ".vercel/output/static"
+
+[build]
+command = "npm run build"
 
 [env.production]
 # Add your environment variables here
